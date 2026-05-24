@@ -1,0 +1,46 @@
+{
+	"name": "DS_SRCS_ALL_PARAMS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AZADLS_PARAM",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"storage_account_loc": {
+					"value": "@dataset().storage_account_loc",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"storage_account_loc": {
+				"type": "string"
+			},
+			"directory": {
+				"type": "string"
+			},
+			"filename": {
+				"type": "string"
+			},
+			"col_delimiter": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().directory",
+					"type": "Expression"
+				}
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
