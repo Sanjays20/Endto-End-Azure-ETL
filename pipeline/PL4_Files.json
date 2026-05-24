@@ -1,9 +1,9 @@
 {
-	"name": "PL3_Source",
+	"name": "PL4_Files",
 	"properties": {
 		"activities": [
 			{
-				"name": "Lkup_L3",
+				"name": "Lkup_L4",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -18,7 +18,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "SELECT DISTINCT L3_switch_type\nFROM dbo.tbl_job a\nJOIN dbo.tbl_trigger b ON a.trigger_id = b.trigger_id\nWHERE b.trigger_name = '@{pipeline().parameters.Trigger}'\n",
+							"value": "SELECT DISTINCT L4_switch_type\nFROM dbo.tbl_job a\nJOIN dbo.tbl_trigger b ON a.trigger_id = b.trigger_id\nWHERE b.trigger_name = '@{pipeline().parameters.Trigger}'",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
@@ -31,11 +31,11 @@
 				}
 			},
 			{
-				"name": "Switch_Clods",
+				"name": "Switch_Files",
 				"type": "Switch",
 				"dependsOn": [
 					{
-						"activity": "Lkup_L3",
+						"activity": "Lkup_L4",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -45,10 +45,10 @@
 				"typeProperties": {
 					"cases": [
 						{
-							"value": "Azure",
+							"value": "CSV",
 							"activities": [
 								{
-									"name": "Exec_Files",
+									"name": "Exec_CSV",
 									"type": "ExecutePipeline",
 									"dependsOn": [],
 									"policy": {
@@ -56,17 +56,7 @@
 									},
 									"userProperties": [],
 									"typeProperties": {
-										"pipeline": {
-											"referenceName": "PL4_Files",
-											"type": "PipelineReference"
-										},
-										"waitOnCompletion": true,
-										"parameters": {
-											"Trigger": {
-												"value": "@pipeline().parameters.Trigger",
-												"type": "Expression"
-											}
-										}
+										"waitOnCompletion": true
 									}
 								}
 							]
