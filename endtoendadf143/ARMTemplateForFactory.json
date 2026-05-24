@@ -481,7 +481,7 @@
 										"type": "Expression"
 									},
 									"filename": {
-										"value": "@activity('Lkup_Job_Details').output.firstRow.sourcefile",
+										"value": "@activity('Lkup_Job_Details').output.firstRow.wildcardfile",
 										"type": "Expression"
 									},
 									"col_delimiter": {
