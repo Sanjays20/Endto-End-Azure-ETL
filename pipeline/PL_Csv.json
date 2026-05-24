@@ -149,6 +149,10 @@
 							"filename": {
 								"value": "@activity('Lkup_Job_Details').output.firstRow.sourcefile",
 								"type": "Expression"
+							},
+							"col_delimiter": {
+								"value": "@activity('Lkup_Job_Details').output.firstRow.delimiter",
+								"type": "Expression"
 							}
 						}
 					}

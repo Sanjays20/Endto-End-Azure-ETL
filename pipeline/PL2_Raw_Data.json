@@ -43,6 +43,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"on": {
+						"value": "@activity('Lkup_PL2').output.firstRow.L2_switch_type",
+						"type": "Expression"
+					},
 					"cases": [
 						{
 							"value": "CloudStorage",
