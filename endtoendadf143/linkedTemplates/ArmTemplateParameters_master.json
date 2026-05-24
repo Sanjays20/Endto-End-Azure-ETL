@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "endtoendadf143"
+		},
+		"LS_AZSQLDB_METADATA_password": {
+			"value": ""
+		},
+		"LS_AZADLS_PARAM_properties_typeProperties_url": {
+			"value": "@{linkedService().storage_account_loc}"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
+			"value": "sql-sevr-143.database.windows.net"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_database": {
+			"value": "sql-sevr-db"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_userName": {
+			"value": "admin87"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
