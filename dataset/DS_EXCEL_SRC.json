@@ -42,7 +42,8 @@
 					"value": "@dataset().directory",
 					"type": "Expression"
 				}
-			}
+			},
+			"firstRowAsHeader": false
 		},
 		"schema": [
 			{

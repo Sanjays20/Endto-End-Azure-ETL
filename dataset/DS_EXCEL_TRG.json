@@ -3,7 +3,13 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_AZADLS_PARAM",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"storage_account_loc": {
+					"value": "@dataset().storage_account_loc",
+					"type": "Expression"
+				}
+			}
 		},
 		"parameters": {
 			"storage_account_loc": {
@@ -17,7 +23,11 @@
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation"
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat('raw/excel/', formatDateTime(utcNow(), 'yyyy'), '/', formatDateTime(utcNow(), 'MM'), '/', formatDateTime(utcNow(), 'dd'))",
+					"type": "Expression"
+				}
 			},
 			"compressionCodec": "snappy"
 		},
