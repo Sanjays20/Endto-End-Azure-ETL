@@ -56,7 +56,17 @@
 									},
 									"userProperties": [],
 									"typeProperties": {
-										"waitOnCompletion": true
+										"pipeline": {
+											"referenceName": "PL_Csv",
+											"type": "PipelineReference"
+										},
+										"waitOnCompletion": true,
+										"parameters": {
+											"Trigger": {
+												"value": "@pipeline().parameters.Trigger",
+												"type": "Expression"
+											}
+										}
 									}
 								}
 							]
