@@ -17,12 +17,6 @@
 			},
 			"directory": {
 				"type": "string"
-			},
-			"filename": {
-				"type": "string"
-			},
-			"col_delimiter": {
-				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -30,10 +24,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@dataset().filename",
-					"type": "Expression"
-				},
 				"folderPath": {
 					"value": "@dataset().directory",
 					"type": "Expression"
