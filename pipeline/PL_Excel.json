@@ -146,6 +146,10 @@
 							"filename": {
 								"value": "@activity('Lkup_Job_Details').output.firstRow.sourcefile",
 								"type": "Expression"
+							},
+							"sheetname": {
+								"value": "@activity('Lkup_Job_Details').output.firstRow.sheetname",
+								"type": "Expression"
 							}
 						}
 					}
