@@ -20,9 +20,6 @@
 			},
 			"filename": {
 				"type": "string"
-			},
-			"format": {
-				"type": "string"
 			}
 		},
 		"annotations": [],

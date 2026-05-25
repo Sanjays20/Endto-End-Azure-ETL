@@ -141,10 +141,6 @@
 							"filename": {
 								"value": "@activity('Lkup_Job_Details').output.firstRow.sourcefile",
 								"type": "Expression"
-							},
-							"format": {
-								"value": "@activity('Lkup_Job_Details').output.firstRow.json_format",
-								"type": "Expression"
 							}
 						}
 					}
