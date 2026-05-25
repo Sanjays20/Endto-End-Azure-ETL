@@ -1,0 +1,15 @@
+{
+	"name": "endtoendetl",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Enabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "daead53f-e89f-4350-ba7c-4e866f74f2e2",
+		"tenantId": "f9f26e0f-cc65-487e-9eac-8e72a9a22054"
+	}
+}
